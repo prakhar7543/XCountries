@@ -9,11 +9,17 @@ export default function CountryFlags() {
 
     try {
       let response = await fetch(url);
+
+      if(!response){
+        console.log('error in fetching data');
+        
+      }
+
       let data = await response.json();
       console.log("fetch data", data);
       setData(data);
     } catch (error) {
-      console.log("error", error);
+      console.log("Error fetching data:", error);
     }
   };
 
