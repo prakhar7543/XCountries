@@ -10,10 +10,9 @@ export default function CountryFlags() {
     try {
       let response = await fetch(url);
 
-      if(!response){
-        console.log('error in fetching data');
-        
-      }
+       if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
       let data = await response.json();
       console.log("fetch data", data);
