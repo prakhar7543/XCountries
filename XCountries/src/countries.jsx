@@ -18,7 +18,7 @@ export default function CountryFlags() {
       console.log("fetch data", data);
       setData(data);
     } catch (error) {
-      console.log("Error fetching data:", error);
+      console.error("Error fetching data:", error)
     }
   };
 
